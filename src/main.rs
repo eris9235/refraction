@@ -3,6 +3,18 @@ use chrono::{Utc, DateTime, Local};
 
 fn main() {
     println!("Hello, world!");
+    let mut root_task: Task = Task {
+        name: String::from("Root task"),
+        description: String::from("The root task, the task which every other task comes from."),
+        creation_time: get_current_time(),
+        est_time: -1,
+        completion_time: 0,
+        completion_status: Completion::Incomplete,
+        repetition_status: String::from("Non-repeating"),
+        location: String::from("None"),
+        sub_tasks: Vec::new(),
+        estimated_priority: -1
+    };
 }
 
 enum Completion {
